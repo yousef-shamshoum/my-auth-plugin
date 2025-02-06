@@ -1,6 +1,6 @@
 displayName: AuthTokenCookie
 type: middleware
-import: gitlab.com/yousef15/my-traefik-plugin
+import: github.com/yousef-shamshoum/my-auth-plugin
 summary: 'A Traefik middleware plugin that performs authentication and sets a secure cookie with the access token'
 iconPath: .assets/icon.png
 testData:
