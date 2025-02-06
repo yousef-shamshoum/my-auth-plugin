@@ -19,8 +19,8 @@ import (
 type Config struct {
 	// Conf should be a full URL (e.g., "http://auth-service/verify")
 	// This will be provided through Traefik's plugin configuration
-	Conf string        `json:"conf,omitempty"`
-	Timeout      time.Duration `json:"timeout,omitempty"`
+	Conf    string        `json:"conf,omitempty"`
+	Timeout time.Duration `json:"timeout,omitempty"`
 }
 
 // CreateConfig creates the default plugin configuration.
@@ -81,7 +81,7 @@ func (a *AuthPlugin) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 
 	// Build the auth server URL using plain HTTP.
 	authURL := fmt.Sprintf("http://%s%s", a.endpointHost, a.endpointPath)
-
+	fmt.Println("Auth URL:", authURL)
 	// Create an HTTP request to the auth server.
 	authReq, err := http.NewRequest(http.MethodGet, authURL, nil)
 	if err != nil {
